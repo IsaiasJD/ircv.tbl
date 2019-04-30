@@ -1,4 +1,4 @@
- {
+ * {
      box-sizing: border-box;
      margin: 0;
      padding: 0;
@@ -10,4 +10,15 @@
    a {
        color: #333333;
        text-decoration: none;
+   }
+   .container {
+       padding: 0 1rem;
+   }
+   .background {
+        background-image: url("./components/images/background.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        opacity: 0.8;
    }
