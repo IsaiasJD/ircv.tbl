@@ -17,7 +17,7 @@ class App extends Component {
       },
       {
         id: 2,
-        firstName: "Deisy",
+        firstName: "Daisy",
         lastName: "Saavedra",
         startingWeight: 202.5,
         currentWeight: 200    
