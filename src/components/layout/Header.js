@@ -9,8 +9,12 @@ export default function Header(){
 }
 
 const headerStyle = {
-    background: '#333', 
+    position: 'fixed',
+    left: '0',
+    top: '0',
+    background: 'black', 
     color: '#fff', 
     textAlign: 'center', 
-    padding: '1px'
+    padding: '1px',
+    width: '100%',
 }
