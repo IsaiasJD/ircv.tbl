@@ -15,7 +15,7 @@ export default function Leader(props) {
 
 const leaderStyle = {
     div:{
-        color: 'white', 
+        color: 'black', 
         textAlign: 'center', 
         padding: '10px',
         margin: '15px 0px 15px 0px',

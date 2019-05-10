@@ -31,13 +31,14 @@
        padding-right: 20px;
        padding-left: 20px;
        padding-bottom: 20px;
-       margin-top: 3.5%;
-       margin-bottom: 1%;
+       margin-top: 50px;
+       margin-bottom: 50px;
    }
  .left {
        left: 0;
        background-color: black;
        opacity: 0.8;
+       position: relative;
    }
 .right {
        right: 0;

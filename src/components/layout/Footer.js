@@ -15,5 +15,9 @@ const footerStyle = {
     backgroundColor: 'black',
     color: 'white',
     textAlign: 'center',
-    padding: '1px'
+    padding: '1px',
+    position: 'fixed',
+    width: '100%',
+    marginTop: '10px',
+    zIndex: '2'
 }

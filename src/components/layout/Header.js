@@ -17,4 +17,7 @@ const headerStyle = {
     textAlign: 'center', 
     padding: '1px',
     width: '100%',
+    marginTop: '1%,',
+    marginBottom: '1%',
+    zIndex: '2'
 }

@@ -110,13 +110,11 @@ class App extends Component {
     return (
       <div className="App">
           <Header />
-          <div className="background">
           <div className="container left">
-          <Contestants contestants={this.state.contestants} />
+            <Contestants contestants={this.state.contestants} />
           </div>
-          <div className="container right">
-          <Leader leader={this.state.contestants[0]} />
-          </div>
+          <div className="background container right">
+            <Leader leader={this.state.contestants[0]} />
           </div>
         <Footer />
       </div>
