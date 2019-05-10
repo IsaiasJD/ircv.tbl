@@ -20,21 +20,21 @@ class App extends Component {
         firstName: "Daisy",
         lastName: "Saavedra",
         startingWeight: 202.5,
-        currentWeight: 200    
+        currentWeight: 197    
       },
       {
         id: 3,
         firstName: "Alva",
         lastName: "Perez",
         startingWeight: 125,
-        currentWeight: 123.5
+        currentWeight: 123
       },
       {
         id: 4,
         firstName: "Nereida",
         lastName: "Calixto",
         startingWeight: 176,
-        currentWeight: 172
+        currentWeight: 168.4
       },
       {
         id: 5,
@@ -48,7 +48,7 @@ class App extends Component {
         firstName: "Dulce",
         lastName: "Saavedra",
         startingWeight: 200,
-        currentWeight: 196
+        currentWeight: 193
       },
       {
         id: 7,
@@ -62,7 +62,7 @@ class App extends Component {
         firstName: "Luisa",
         lastName: "Fuller",
         startingWeight: 191,
-        currentWeight: 196
+        currentWeight: 194
       },
       {
         id: 9,
@@ -76,7 +76,7 @@ class App extends Component {
         firstName: "Adrian",
         lastName: "Casarrubias",
         startingWeight: 187,
-        currentWeight: 179
+        currentWeight: 178
       },
       {
         id: 11,
@@ -90,7 +90,7 @@ class App extends Component {
         firstName: "Mrs",
         lastName: "Romero",
         startingWeight: 186,
-        currentWeight: 186
+        currentWeight: 182
       }
     ]
   };
