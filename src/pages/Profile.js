@@ -18,4 +18,3 @@ export default function Profile(props) {
         <Layout>{(isValid && <UserProfile />) || <Redirect to="/" />}</Layout>
     );
 }
-
