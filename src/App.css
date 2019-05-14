@@ -1,47 +1,52 @@
- * {
-     box-sizing: border-box;
-     margin: 0;
-     padding: 0;
- }
-  body {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      line-height: 1.4;
-  }
-   a {
-       color: #333333;
-       text-decoration: none;
-   }
-   .background {
-        background-image: url("./components/images/background.jpg");
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        overflow: hidden;
-        background-color: black;
-        opacity: .8;
-   }
-   .container {
-       height: 100%;
-       width: 50%;
-       position: fixed;
-       z-index: 1;
-       top: 0;
-       overflow-x: hidden;
-       padding-top: 20px;
-       padding-right: 20px;
-       padding-left: 20px;
-       padding-bottom: 20px;
-       margin-top: 50px;
-       margin-bottom: 50px;
-   }
- .left {
-       left: 0;
-       background-color: black;
-       opacity: 0.8;
-       position: relative;
-   }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    line-height: 1.4;
+}
+a {
+    color: #333333;
+    text-decoration: none;
+}
+.background {
+    background-image: url("./components/images/background.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-color: black;
+    opacity: 0.8;
+}
+.container {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.left {
+    left: 0;
+    background-color: black;
+    opacity: 0.8;
+    position: relative;
+}
 .right {
-       right: 0;
-       background-color: black;
-       opacity: 0.8;
-   }
+    right: 0;
+    background-color: black;
+    opacity: 0.8;
+}
+
+.content {
+    padding: 2.5rem 1rem;
+}
