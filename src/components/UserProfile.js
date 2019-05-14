@@ -8,6 +8,7 @@ export default function UserProfile(props){
     const leader = contestants[0];
     const mainUser = contestants.filter(c => c.profileLink == profileLink)[0];
     const percentToBe = calculatePercent(leader, mainUser);
+    const weightNeeded = calculateWeight(percentToBe, mainUser);
         return (
     <   div className="user-profile-block">
             <h3>
@@ -17,6 +18,7 @@ export default function UserProfile(props){
             <p>Current Weight: {mainUser.currentWeight}</p>
             <p>Percentage of Weight Loss: %{mainUser.percentLost}</p>
             <p>Percent Needed To Be In The Lead: %{percentToBe}</p>
+            <p>Weight Loss Needed To Be In The Lead: {weightNeeded}</p>
         </div>
         )
     
@@ -25,6 +27,11 @@ export default function UserProfile(props){
 function calculatePercent (leader, mainUser){
     const leaderPercent = leader.percentLost;
     const userPercent = mainUser.percentLost;
-    const percentToBe = Math.round((leaderPercent - userPercent  * 10000) / 100);
+    const percentToBe = Math.round(((leaderPercent - userPercent) * 100 ) / 100);
     return percentToBe;
+}
+
+function calculateWeight (percentToBe, mainUser){
+    const weightNeeded = Math.round(((mainUser.startingWeight * (percentToBe / 100)) * 100) / 100);
+    return weightNeeded;
 }
