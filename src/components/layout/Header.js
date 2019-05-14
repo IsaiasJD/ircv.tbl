@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
     const context = useContext(AppContext);
-    console.log(context);
     return (
         <header style={headerStyle}>
         <Link to={"/"}>

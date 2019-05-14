@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Redirect } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import { AppContext } from "../components/AppProvider";
+import UserProfile from "../components/UserProfile";
 
 export default function Profile(props) {
     const {
@@ -14,6 +15,7 @@ export default function Profile(props) {
 
     const isValid = user.isLoggedIn && profileLink === user.profileLink;
     return (
-        <Layout>{(isValid && <h1>Profile</h1>) || <Redirect to="/" />}</Layout>
+        <Layout>{(isValid && <UserProfile />) || <Redirect to="/" />}</Layout>
     );
 }
+
