@@ -46,11 +46,13 @@ export default function Authentication(props) {
 
     return (
         <Layout>
-            <h1>Authentication</h1>
+            <div className="authentication-block">
+            <h3>Authentication</h3>
             <h2>{`Hello, ${contestant.firstName} ${contestant.lastName}`}</h2>
             <input type="password" onChange={handleOnChange} />
             <button onClick={handleClick}>Continue</button>
             {(error && <h6>{error}</h6>) || null}
+            </div>
         </Layout>
     );
 }

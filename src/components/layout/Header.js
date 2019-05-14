@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
 import { AppContext } from "../AppProvider";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     const context = useContext(AppContext);
     console.log(context);
     return (
         <header style={headerStyle}>
+        <Link to={"/"}>
             <h1>The Biggest Loser</h1>
+        </Link>
         </header>
     );
 }
