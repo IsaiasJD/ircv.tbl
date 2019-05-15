@@ -10,7 +10,9 @@ export default function Contestants(props) {
                 </h3>
             </Link>
             <p>Percentage of Weight Loss:</p>
-            <p>%{contestant.percentLost}</p>
+            <p>
+                <span>%{contestant.percentLost}</span>
+            </p>
         </div>
     ));
 }

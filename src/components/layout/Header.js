@@ -6,9 +6,9 @@ export default function Header() {
     const context = useContext(AppContext);
     return (
         <header style={headerStyle}>
-        <Link to={"/"}>
-            <h1>The Biggest Loser</h1>
-        </Link>
+            <Link to={"/"}>
+                <h1>Weight Loss Challenge</h1>
+            </Link>
         </header>
     );
 }
@@ -20,7 +20,7 @@ const headerStyle = {
     background: "black",
     color: "#fff",
     textAlign: "center",
-    padding: "1px",
+    padding: "10px",
     width: "100%",
     marginTop: "1%,",
     marginBottom: "1%",

@@ -43,15 +43,37 @@ export default function Authentication(props) {
             setError("Password is incorrect");
         }
     }
+    function handleKeyPress(e) {
+        if (e.key === "Enter") {
+            const key = `REACT_APP_${(
+                contestant.firstName +
+                "_" +
+                contestant.lastName
+            ).toUpperCase()}`;
 
+            if (password === process.env[key]) {
+                setError(null);
+                saveUser({ profileLink, isLoggedIn: true });
+                history.push(`/profile/${profileLink}`);
+            } else {
+                setError("Password is incorrect");
+            }
+        }
+    }
     return (
         <Layout>
             <div className="authentication-block">
-            <h3>Authentication</h3>
-            <h2>{`Hello, ${contestant.firstName} ${contestant.lastName}`}</h2>
-            <input type="password" onChange={handleOnChange} />
-            <button onClick={handleClick}>Continue</button>
-            {(error && <h6>{error}</h6>) || null}
+                <h3>Authentication</h3>
+                <h2>{`Hello, ${contestant.firstName} ${
+                    contestant.lastName
+                }`}</h2>
+                <input
+                    type="password"
+                    onChange={handleOnChange}
+                    onKeyPress={handleKeyPress}
+                />
+                <button onClick={handleClick}>Continue</button>
+                {(error && <h6>{error}</h6>) || null}
             </div>
         </Layout>
     );

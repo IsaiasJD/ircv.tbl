@@ -111,11 +111,10 @@ export default class AppProvider extends React.Component {
 
     componentDidMount() {
         const contestants = [].concat(this.state.contestants).map(c => {
-            const percentLost =
-                Math.round(
-                    ((c.startingWeight - c.currentWeight) / c.startingWeight) *
-                        10000
-                ) / 100;
+            const percentLost = (
+                ((c.startingWeight - c.currentWeight) / c.startingWeight) *
+                100
+            ).toFixed(2);
             return { ...c, percentLost };
         });
         contestants.sort((a, b) => b.percentLost - a.percentLost);
