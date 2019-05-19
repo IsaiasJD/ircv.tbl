@@ -112,5 +112,9 @@
   "user": {
     "profileLink": "",
     "isLoggedIn": false
+  },
+  "saveUser": {
+    "profileLink": "",
+    "isLoggedIn": false
   }
 }
