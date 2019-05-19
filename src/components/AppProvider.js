@@ -1,46 +1,26 @@
 import React from "react";
-import axios from "axios";
+import Contestants from "../apis/contestants.api";
 
 const AppContext = React.createContext({});
 const AppConsumer = AppContext.Consumer;
 
 export default class AppProvider extends React.Component {
     state = {
-        contestants: [
-            {
-                id: null,
-                firstName: "",
-                lastName: "",
-                startingWeight: null,
-                currentWeight: null,
-                profileLink: ""
-            }
-        ],
+        contestants: [],
+        leader: {},
         user: {},
         saveUser: {}
     };
 
-    componentDidMount() {
-        axios
-            .get(
-                "https://my-json-server.typicode.com/IsaiasJD/ircv.tbl/contestants"
-            )
-            .then(res =>
-                this.setState({
-                    contestants: res.data
-                        .map(c => {
-                            c.percentLost = (
-                                ((c.startingWeight - c.currentWeight) /
-                                    c.startingWeight) *
-                                100
-                            ).toFixed(2);
-                            return {
-                                ...c
-                            };
-                        })
-                        .sort((a, b) => b.percentLost - a.percentLost)
-                })
-            );
+    async componentDidMount() {
+        const contestantsApi = new Contestants();
+        const contestantsPromise = contestantsApi.getAll();
+        const leaderPromise = contestantsApi.getLeader();
+
+        const contestants = await contestantsPromise;
+        const leader = await leaderPromise;
+
+        this.setState({ contestants, leader });
     }
 
     saveUser = user => {
@@ -49,13 +29,14 @@ export default class AppProvider extends React.Component {
     };
 
     render() {
-        const { contestants, user } = this.state;
+        const { contestants, user, leader } = this.state;
         const { children } = this.props;
         return (
             <AppContext.Provider
                 value={{
                     contestants,
                     user,
+                    leader,
                     saveUser: this.saveUser
                 }}>
                 {children}

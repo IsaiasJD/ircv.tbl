@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 import { AppContext } from "../components/AppProvider";
 
-export default function UserProfile(props) {
+export default function UserProfile() {
     const context = useContext(AppContext);
-    const { contestants, user } = context;
+    const { contestants, user, leader } = context;
     const profileLink = user.profileLink;
-    const leader = contestants[0];
     const mainUser = contestants.filter(c => c.profileLink == profileLink)[0];
     const percentToBe = calculatePercent(leader, mainUser);
     const weightNeeded = calculateWeight(percentToBe, mainUser);
+
+    const notLeader = mainUser.profileLink !== leader.profileLink;
+
     return (
         <div className="user-profile-block">
             <h3>
@@ -23,14 +25,18 @@ export default function UserProfile(props) {
             <p>
                 Percentage of Weight Loss: <span> %{mainUser.percentLost}</span>
             </p>
-            <p>
-                You need to loose
-                <span> %{percentToBe}</span> more to be in the lead
-            </p>
-            <p>
-                Weight Loss Needed To Be In The Lead:
-                <span>{weightNeeded}lbs</span>
-            </p>
+            {(notLeader && (
+                <div>
+                    <p>
+                        You need to loose
+                        <span> %{percentToBe}</span> more to be in the lead
+                    </p>
+                    <p>
+                        Weight Loss Needed To Be In The Lead:
+                        <span>{weightNeeded}lbs</span>
+                    </p>
+                </div>
+            )) || <h1>You're the leader!</h1>}
         </div>
     );
 }
