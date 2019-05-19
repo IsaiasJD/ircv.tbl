@@ -13,6 +13,11 @@ export default class AppProvider extends React.Component {
     };
 
     async componentDidMount() {
+        const storedUser = sessionStorage.getItem("TBL_USER");
+        if (storedUser) {
+            this.setState({ user: JSON.parse(storedUser) });
+        }
+
         const contestantsApi = new Contestants();
         const contestantsPromise = contestantsApi.getAll();
         const leaderPromise = contestantsApi.getLeader();
@@ -24,8 +29,9 @@ export default class AppProvider extends React.Component {
     }
 
     saveUser = user => {
-        this.setState({ user });
-        // TODO: use sessionStorage || cookies || localStorage for persistent storage
+        this.setState({ user }, () =>
+            sessionStorage.setItem("TBL_USER", JSON.stringify(user))
+        );
     };
 
     render() {

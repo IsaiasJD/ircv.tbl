@@ -4,6 +4,10 @@ import { AppContext } from "../components/AppProvider";
 export default function UserProfile() {
     const context = useContext(AppContext);
     const { contestants, user, leader } = context;
+    if (contestants.length === 0 || !contestants) {
+        return null;
+    }
+
     const profileLink = user.profileLink;
     const mainUser = contestants.filter(c => c.profileLink == profileLink)[0];
     const percentToBe = calculatePercent(leader, mainUser);

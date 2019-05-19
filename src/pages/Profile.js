@@ -12,10 +12,13 @@ export default function Profile(props) {
     } = props;
     const context = useContext(AppContext);
     const { user } = context;
-    console.log(context, "context");
 
-    const isValid = user.isLoggedIn && profileLink === user.profileLink;
+    const isAuthenticated = user.isLoggedIn && profileLink === user.profileLink;
     return (
-        <Layout>{(isValid && <UserProfile />) || <Redirect to="/" />}</Layout>
+        <Layout>
+            {(isAuthenticated && <UserProfile />) || (
+                <Redirect to={`/authentication/${profileLink}`} />
+            )}
+        </Layout>
     );
 }
