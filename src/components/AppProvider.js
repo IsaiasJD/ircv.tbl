@@ -98,7 +98,7 @@ export default class AppProvider extends React.Component {
                 id: 12,
                 firstName: "Mrs",
                 lastName: "Romero",
-                startingWeight: 186,
+                startingWeight: 187,
                 currentWeight: 182,
                 profileLink: "mromero"
             }
