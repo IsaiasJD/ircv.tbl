@@ -35,6 +35,9 @@ export default function Authentication(props) {
             contestant.lastName
         ).toUpperCase()}`;
 
+        console.log(key, "key");
+        console.log(password, "password");
+
         if (password === process.env[key]) {
             setError(null);
             saveUser({ profileLink, isLoggedIn: true });
