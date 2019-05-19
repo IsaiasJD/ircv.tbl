@@ -45,19 +45,7 @@ export default function Authentication(props) {
     }
     function handleKeyPress(e) {
         if (e.key === "Enter") {
-            const key = `REACT_APP_${(
-                contestant.firstName +
-                "_" +
-                contestant.lastName
-            ).toUpperCase()}`;
-
-            if (password === process.env[key]) {
-                setError(null);
-                saveUser({ profileLink, isLoggedIn: true });
-                history.push(`/profile/${profileLink}`);
-            } else {
-                setError("Password is incorrect");
-            }
+            handleClick();
         }
     }
     return (
