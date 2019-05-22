@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Redirect } from "react-router-dom";
 import { AppContext } from "../components/AppProvider";
 import Layout from "../components/layout/Layout";
 
@@ -16,7 +17,7 @@ export default function Authentication(props) {
     } = props;
 
     const context = useContext(AppContext);
-    const { contestants, saveUser } = context;
+    const { contestants, saveUser, user } = context;
 
     let contestant;
     if (contestants) {
@@ -48,21 +49,26 @@ export default function Authentication(props) {
             handleClick();
         }
     }
+
+    const isAuthenticated = user.isLoggedIn && profileLink === user.profileLink;
     return (
         <Layout>
-            <div className="authentication-block">
-                <h3>Authentication</h3>
-                <h2>{`Hello, ${contestant.firstName} ${
-                    contestant.lastName
-                }`}</h2>
-                <input
-                    type="password"
-                    onChange={handleOnChange}
-                    onKeyPress={handleKeyPress}
-                />
-                <button onClick={handleClick}>Continue</button>
-                {(error && <h6>{error}</h6>) || null}
-            </div>
+            {isAuthenticated && <Redirect to={`/profile/${profileLink}`} />}
+            {contestants && contestants.length > 0 && contestant != null && (
+                <div className="authentication-block">
+                    <h3>Authentication</h3>
+                    <h2>{`Hello, ${contestant.firstName} ${
+                        contestant.lastName
+                    }`}</h2>
+                    <input
+                        type="password"
+                        onChange={handleOnChange}
+                        onKeyPress={handleKeyPress}
+                    />
+                    <button onClick={handleClick}>Continue</button>
+                    {(error && <h6>{error}</h6>) || null}
+                </div>
+            )}
         </Layout>
     );
 }
