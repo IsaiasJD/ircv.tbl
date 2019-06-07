@@ -6,7 +6,8 @@ export default function Contestants(props) {
         <div key={i}>
             <Link to={`/authentication/${contestant.profileLink}`}>
                 <h3>
-                    {i + 1}. {contestant.firstName} {contestant.lastName}
+                    {/* {i + 1}. {contestant.firstName} {contestant.lastName} */}
+                    {contestant.firstName} {contestant.lastName}
                 </h3>
             </Link>
             <p>Percentage of Weight Loss:</p>
