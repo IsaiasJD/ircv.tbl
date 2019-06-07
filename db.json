@@ -14,7 +14,7 @@
       "firstName": "Daisy",
       "lastName": "Saavedra",
       "startingWeight": 202.5,
-      "currentWeight": 197,
+      "currentWeight": 192.5,
       "profileLink": "dasaavedra",
       "percentLost": ""
     },
@@ -32,7 +32,7 @@
       "firstName": "Nereida",
       "lastName": "Calixto",
       "startingWeight": 176,
-      "currentWeight": 168,
+      "currentWeight": 169,
       "profileLink": "ncalixto",
       "percentLost": ""
     },
@@ -41,7 +41,7 @@
       "firstName": "Mrs",
       "lastName": "Perrin",
       "startingWeight": 147,
-      "currentWeight": 145,
+      "currentWeight": 143.5,
       "profileLink": "mperrin",
       "percentLost": ""
     },
@@ -50,7 +50,7 @@
       "firstName": "Dulce",
       "lastName": "Saavedra",
       "startingWeight": 200,
-      "currentWeight": 193,
+      "currentWeight": 188,
       "profileLink": "dsaavedra",
       "percentLost": ""
     },
@@ -86,7 +86,7 @@
       "firstName": "Adrian",
       "lastName": "Casarrubias",
       "startingWeight": 187,
-      "currentWeight": 178,
+      "currentWeight": 166,
       "profileLink": "acasarrubias",
       "percentLost": ""
     },
@@ -104,7 +104,7 @@
       "firstName": "Mrs",
       "lastName": "Romero",
       "startingWeight": 187,
-      "currentWeight": 179,
+      "currentWeight": 178,
       "profileLink": "mromero",
       "percentLost": ""
     }
